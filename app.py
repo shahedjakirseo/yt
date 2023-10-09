@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 from lxml import html
 import requests
+from flask_cors import CORS  # Import the CORS class
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for your app
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
